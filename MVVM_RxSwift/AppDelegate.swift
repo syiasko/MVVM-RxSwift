@@ -13,9 +13,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func setNavigationBarStyle(){
+        UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 52/255, green: 152/255, blue: 219/255, alpha: 1.0)
+        
+        setNavigationBarLargeTextTitleAttributes()
+        setNavigationBarTitleTextAttributes()
+        
+    }
+    
+    func setNavigationBarTitleTextAttributes(){
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    }
+    
+    func setNavigationBarLargeTextTitleAttributes(){
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,
+                                                                 NSAttributedString.Key.strokeColor : UIColor.lightGray,
+                                                                 NSAttributedString.Key.strokeWidth : -2]
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setNavigationBarStyle()
         return true
     }
 
